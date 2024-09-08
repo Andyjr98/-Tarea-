@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-sm-12">
+      <app-card cardTitle="Lista de Unidades de Medida" blockClass="pc-component">
+        <div class="col-md-12 col-xl-8">
+          <h5 class="mb-3">
+            <a href="nuevaunidadmedida" class="btn btn-outline-dark">Nueva Unidad de Medida</a>
+          </h5>
+          <div class="card tbl-card">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th class="text-end">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let unidad of unidadesMedidas; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ unidad.nombre }}</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-success" [routerLink]="['/editarunidadmedida', unidad.id]">
+                        Editar
+                      </button>
+                      <button (click)="eliminar(unidad.id)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  
